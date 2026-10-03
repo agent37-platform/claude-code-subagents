@@ -1,0 +1,13 @@
+{
+  "name": "subagents",
+  "description": "Eleven tested Claude Code subagents with least-privilege tools and explicit output contracts: code review, security audit, test writing, debugging, flaky-test hunting, git archaeology, doc sync, PR writing, dependency audit, CLAUDE.md authoring, migration review.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Agent37",
+    "url": "https://github.com/agent37-platform"
+  },
+  "homepage": "https://github.com/agent37-platform/claude-code-subagents",
+  "repository": "https://github.com/agent37-platform/claude-code-subagents",
+  "license": "MIT",
+  "keywords": ["subagents", "agents", "code-review", "claude-code"]
+}

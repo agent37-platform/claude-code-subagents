@@ -1,0 +1,30 @@
+name: tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Lint agents and validate manifests
+        run: bash tests/run.sh
+  official-validator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Run the official Claude Code plugin validator
+        # Aimed at a marketplace root, the validator checks only the manifest,
+        # so the agent files and plugin manifest get their own runs.
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude plugin validate agents --strict
+          claude plugin validate .claude-plugin/plugin.json --strict
+          claude plugin validate . --strict

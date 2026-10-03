@@ -1,0 +1,15 @@
+{
+  "name": "agent37-subagents",
+  "owner": {
+    "name": "Agent37",
+    "url": "https://github.com/agent37-platform"
+  },
+  "plugins": [
+    {
+      "name": "subagents",
+      "source": "./",
+      "description": "Eleven tested Claude Code subagents with least-privilege tools and explicit output contracts: code review, security audit, test writing, debugging, flaky-test hunting, git archaeology, doc sync, PR writing, dependency audit, CLAUDE.md authoring, migration review."
+    }
+  ],
+  "description": "Agent37's Claude Code subagents: a small, tested collection built like production code, validated against current CLI releases."
+}
